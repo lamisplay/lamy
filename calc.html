@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="calc.css">
+</head>
+<body>
+    <div id="container">
+        <div id="Calculator">
+            <input id="display" readonly>
+            <div id="keys">
+                <button onclick="click1('1')" value="1" type="button">1</button>
+                <button onclick="click1('2')" value="2" type="button">2</button>
+                <button onclick="click1('3')" value="3" type="button">3</button>
+                <button onclick="click1('4')" value="4" type="button">4</button>
+                <button onclick="click1('5')" value="5" type="button">5</button>
+                <button onclick="click1('6')" value="6" type="button">6</button>
+                <button onclick="click1('7')" value="7" type="button">7</button>
+                <button onclick="click1('8')" value="8" type="button">8</button>
+                <button onclick="click1('9')" value="9" type="button">9</button>
+                <button onclick="click1('0')" value="0" type="button">0</button>
+                <button onclick="click1('-')" value="-"  type="button" class="btn">-</button>
+                <button onclick="click1('*')" value="*" type="button" class="btn">*</button>
+                <button onclick="click1('/')" value="/" type="button" class="btn">/</button>
+                <button onclick="click1('.')" value="." type="button" class="btn">.</button>
+                <button onclick="click1('+')" value="=" type="button" class="btn">+</button>
+
+                <button onclick="cal()" type="button" class="btn">=</button>
+
+                <button onclick="clear1('')" type="button" class="btn">C</button>
+                
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
+<script>
+   let display = document.getElementById("display")
+
+   function click1(number) {
+    
+    display.value += number
+    
+    console.log(display.value);
+   }
+   function cal() {
+       
+    try {
+        display.value = eval(display.value)
+    } catch (error) {
+        display.value = 'error'
+    }
+
+    console.log(display.value);
+   }
+
+   function clear1(empty) {
+      display.value = empty
+
+      console.log(display.value);
+   }
+
+</script>
